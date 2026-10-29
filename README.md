@@ -44,43 +44,6 @@ El comando levanta la API en `http://127.0.0.1:4174` y Expo en `http://localhost
 npm run dev
 ```
 
-4. Escanea el QR de Expo con Expo Go en Android o con la cámara en iPhone.
-
-Después de actualizar desde SDK 57, inicia una vez con `npm run dev -- --clear` para limpiar la caché de Metro. Si el cliente del teléfono indica que solo admite SDK 57, necesita actualizarse a uno compatible con SDK 58. Si aún no está disponible para tu dispositivo, la alternativa es una compilación de desarrollo con SDK 58.
-
-La API se inicia en la red local, en el puerto 4174. La aplicación obtiene normalmente la dirección del computador desde Expo. Si el teléfono no conecta, comprueba que Windows permita Node en redes privadas y que la red no aísle los dispositivos.
-
-Para fijar una dirección, copia `.env.example` como `.env`, cambia la IP por la de tu computador y reinicia Expo:
-
-```dotenv
-EXPO_PUBLIC_API_URL=http://192.168.1.20:4174
-```
-
-Esta variable es pública y no debe contener contraseñas ni secretos. `localhost` desde un teléfono apunta al teléfono. El túnel de Expo solo transporta el código de la aplicación; no publica esta API. Para usar redes distintas se necesita una API accesible mediante HTTPS y configurar su URL.
-
-También puedes iniciar cada servicio en una terminal:
-
-```powershell
-npm run server:lan
-npm start
-```
-
-`npm run server` escucha únicamente en el computador. `npm run server:lan` permite acceder a la API desde dispositivos de la red y muestra las IP disponibles. Hay un solo perfil compartido por cada instalación del servidor.
-
-## Qué puedes usar
-
-- Explorar lugares, buscar por productos o ingredientes, filtrar, ordenar y ver el mapa.
-- Ordenar por cercanía al conceder el permiso de ubicación.
-- Guardar favoritos y revisar las fichas, etiquetas y aportes.
-- Revisar ingredientes por reglas de texto y consultar códigos del catálogo, escritos o leídos con cámara.
-- Adjuntar fotos a aportes, registrar disponibilidad y consultar notificaciones.
-- Añadir productos a la lista, ajustar cantidades, marcar compras y exportar CSV.
-- Abrir recetas y añadir sus productos del catálogo a la lista.
-- Cambiar planes de prueba y acceder al panel de comercio, con periodos y exportación.
-- Guardar nombre y preferencias, o restaurar los datos iniciales desde el perfil.
-
-Se retiró el rótulo solicitado en toda la nueva aplicación. Se conservan las aclaraciones útiles sobre datos de ejemplo, análisis por reglas y planes sin cobros. El código escrito para esta migración no contiene comentarios; las explicaciones están en la documentación.
-
 ## Partes importantes
 
 | Ubicación | Responsabilidad |
@@ -98,8 +61,6 @@ Se retiró el rótulo solicitado en toda la nueva aplicación. Se conservan las 
 | `.data/store.json` | Datos persistidos al ejecutar la aplicación. No se versionan. |
 | `test/` | Pruebas de API y lógica compartida. |
 
-Lee [las decisiones de la migración](docs/MIGRACION.md), [el manual de uso](docs/USO.md) y [la verificación](docs/VERIFICACION.md).
-
 ## Comandos
 
 | Comando | Resultado |
@@ -112,19 +73,3 @@ Lee [las decisiones de la migración](docs/MIGRACION.md), [el manual de uso](doc
 | `npm run build:web` | Exporta la web a `dist/`. |
 | `npm run build:native` | Genera los bundles de Android/iOS en `dist-native/`. |
 | `npm run server` | API y, si existe `dist/`, web compilada en el puerto 4174. |
-
-Para revisar la web compilada, detén el servidor anterior, ejecuta `npm run build:web`, luego `npm run server` y abre `http://127.0.0.1:4174`. Las rutas como `/shopping` funcionan al recargar directamente.
-
-`build:native` verifica el empaquetado del JavaScript y los recursos. No genera un APK o IPA. Una distribución en tiendas requiere una compilación nativa, identificadores definitivos, firma, configuración de mapas y servicios de producción.
-
-Para las pruebas de navegador, instala Chromium una vez con `npx playwright install chromium`, genera `dist/` y ejecuta `npm run test:web`.
-
-## Alcance actual
-
-La persistencia sigue siendo un archivo JSON local con escrituras atómicas. No existen cuentas individuales, autenticación, pagos, OCR, notificaciones push ni certificación de productos. El recetario y el panel cambian según el plan seleccionado en la interfaz; esto todavía no es un control de acceso para una publicación pública. Los comercios, valoraciones y precios iniciales son ficticios. La fotografía es una ilustración compartida, no una fotografía de cada comercio.
-
-El mapa usa OpenStreetMap/Leaflet en web y `react-native-maps` en móvil. El mapa web requiere internet. Cámara, fotos y ubicación solo se solicitan al utilizar esas funciones. En navegador, cámara y ubicación requieren un contexto seguro, como HTTPS o localhost. En compilaciones móviles propias se deben configurar los proveedores y permisos correspondientes.
-
-Antes de publicar, sustituye el catálogo por información validada, incorpora una base de datos con cuentas y permisos, configura HTTPS y revisa el informe de dependencias descrito en `docs/VERIFICACION.md`.
-
-Referencias técnicas: [Expo Router](https://docs.expo.dev/router/introduction/), [Expo Camera](https://docs.expo.dev/versions/latest/sdk/camera/), [React Native Maps en Expo](https://docs.expo.dev/versions/latest/sdk/map-view/).
