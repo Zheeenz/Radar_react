@@ -25,7 +25,7 @@ Cada instalación guarda su propio perfil y datos de prueba. Descargar el reposi
 
 ## Iniciar en el computador
 
-Requisitos: Node.js 24 LTS, npm y una conexión a internet para instalar paquetes y cargar los mapas web. Ejecuta los comandos desde `D:\Dev\Radar_Vegano\Radar_react`.
+Requisitos: Node.js 24 LTS, npm y una conexión a internet para instalar paquetes y cargar los mapas web. Ejecuta los comandos desde `C:\Radar_Vegano\Radar_react`.
 
 ```powershell
 npm ci
