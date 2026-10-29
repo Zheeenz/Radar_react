@@ -2,8 +2,6 @@
 
 La aplicación anterior fue migrada a **React Native con Expo y TypeScript**. Comparte pantallas, componentes y lógica entre web, Android e iOS. El servidor Node también está dentro de esta carpeta; no necesita archivos de la versión anterior para ejecutarse.
 
-El proyecto utiliza **Expo SDK 58, React Native 0.88 y Worklets 0.13.0 estable**. Los detalles del cambio y de la corrección de seguridad están en [ACTUALIZACION_EXPO58.md](docs/ACTUALIZACION_EXPO58.md).
-
 ## Descargar desde Git para la presentación
 
 Requisitos en el computador: **Node.js 24 LTS**, npm y Git. En el teléfono, Expo Go compatible con el SDK 58 del proyecto.
