@@ -1,0 +1,99 @@
+erDiagram
+    direction LR
+
+    PLANES {
+        bigint id PK
+        text nombre
+        text descripcion
+        numeric precio
+    }
+
+    USUARIOS {
+        bigint id PK
+        text nombre
+        text email UK
+        text contraseña
+        timestamptz fecha_registro
+        bigint plan_id FK
+    }
+
+    COMERCIOS {
+        bigint id PK
+        text nombre
+        text direccion
+        text telefono
+        text email UK
+    }
+
+    PRODUCTOS {
+        bigint id PK
+        text nombre
+        text descripcion
+        numeric precio
+        bigint comercio_id FK
+    }
+
+    INVENTARIOS {
+        bigint id PK
+        bigint producto_id FK
+        int cantidad
+    }
+
+    RECETAS {
+        bigint id PK
+        text nombre
+        text instrucciones
+    }
+
+    INGREDIENTE_RECETAS {
+        bigint id PK
+        bigint receta_id FK
+        bigint producto_id FK
+        numeric cantidad
+    }
+
+    CARRITOS {
+        bigint id PK
+        bigint usuario_id FK
+        timestamptz fecha_creacion
+    }
+
+    DETALLE_CARRITOS {
+        bigint id PK
+        bigint carrito_id FK
+        bigint producto_id FK
+        int cantidad
+    }
+
+    FAVORITOS {
+        bigint id PK
+        bigint usuario_id FK
+        bigint producto_id FK
+    }
+
+    NOTIFICACIONES {
+        bigint id PK
+        bigint usuario_id FK
+        text mensaje
+        timestamptz fecha
+    }
+
+    PREFERENCIA_USUARIO {
+        bigint id PK
+        bigint usuario_id FK
+        text tipo_comida
+        int nivel_preferencia
+    }
+
+    PLANES |o..o{ USUARIOS : plan_id
+    COMERCIOS |o..o{ PRODUCTOS : comercio_id
+    PRODUCTOS |o..o{ INVENTARIOS : producto_id
+    RECETAS |o..o{ INGREDIENTE_RECETAS : receta_id
+    PRODUCTOS |o..o{ INGREDIENTE_RECETAS : producto_id
+    USUARIOS |o..o{ CARRITOS : usuario_id
+    CARRITOS |o..o{ DETALLE_CARRITOS : carrito_id
+    PRODUCTOS |o..o{ DETALLE_CARRITOS : producto_id
+    USUARIOS |o..o{ FAVORITOS : usuario_id
+    PRODUCTOS |o..o{ FAVORITOS : producto_id
+    USUARIOS |o..o{ NOTIFICACIONES : usuario_id
+    USUARIOS |o..o{ PREFERENCIA_USUARIO : usuario_id

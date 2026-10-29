@@ -1,25 +1,21 @@
 {
   "expo": {
-    "name": "Radar_react",
-    "slug": "Radar_react",
+    "name": "Paradero Vegano",
+    "slug": "paradero-vegano",
+    "scheme": "paraderovegano",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "default",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
-      },
-      "predictiveBackGestureEnabled": false
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    }
+    "ios": { "supportsTablet": true, "bundleIdentifier": "cl.paraderovegano.app" },
+    "android": { "package": "cl.paraderovegano.app", "adaptiveIcon": { "foregroundImage": "./assets/icon.png", "backgroundColor": "#103c2f" } },
+    "web": { "bundler": "metro", "output": "single", "favicon": "./assets/favicon.png", "name": "Paradero Vegano", "description": "Encuentra tu próximo paradero vegetal en Santiago." },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      ["expo-camera", { "cameraPermission": "Permite a Paradero Vegano leer códigos de barras con tu cámara.", "recordAudioAndroid": false, "microphonePermission": false }],
+      ["expo-image-picker", { "photosPermission": "Permite a Paradero Vegano adjuntar una foto de la etiqueta a tu aporte.", "cameraPermission": "Permite a Paradero Vegano fotografiar etiquetas.", "microphonePermission": false }],
+      ["expo-location", { "locationWhenInUsePermission": "Permite a Paradero Vegano ordenar los lugares según tu ubicación." }]
+    ]
   }
 }

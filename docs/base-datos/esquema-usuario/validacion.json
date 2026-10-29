@@ -1,0 +1,91 @@
+{
+  "validation": "SQL validado en PostgreSQL integrado en memoria; no aplicado a la aplicación",
+  "tables": [
+    "carritos",
+    "comercios",
+    "detalle_carritos",
+    "favoritos",
+    "ingrediente_recetas",
+    "inventarios",
+    "notificaciones",
+    "planes",
+    "preferencia_usuario",
+    "productos",
+    "recetas",
+    "usuarios"
+  ],
+  "relationships": [
+    {
+      "tabla_hija": "carritos",
+      "columna": "usuario_id",
+      "tabla_padre": "usuarios",
+      "admite_null": true
+    },
+    {
+      "tabla_hija": "detalle_carritos",
+      "columna": "carrito_id",
+      "tabla_padre": "carritos",
+      "admite_null": true
+    },
+    {
+      "tabla_hija": "detalle_carritos",
+      "columna": "producto_id",
+      "tabla_padre": "productos",
+      "admite_null": true
+    },
+    {
+      "tabla_hija": "favoritos",
+      "columna": "producto_id",
+      "tabla_padre": "productos",
+      "admite_null": true
+    },
+    {
+      "tabla_hija": "favoritos",
+      "columna": "usuario_id",
+      "tabla_padre": "usuarios",
+      "admite_null": true
+    },
+    {
+      "tabla_hija": "ingrediente_recetas",
+      "columna": "producto_id",
+      "tabla_padre": "productos",
+      "admite_null": true
+    },
+    {
+      "tabla_hija": "ingrediente_recetas",
+      "columna": "receta_id",
+      "tabla_padre": "recetas",
+      "admite_null": true
+    },
+    {
+      "tabla_hija": "inventarios",
+      "columna": "producto_id",
+      "tabla_padre": "productos",
+      "admite_null": true
+    },
+    {
+      "tabla_hija": "notificaciones",
+      "columna": "usuario_id",
+      "tabla_padre": "usuarios",
+      "admite_null": true
+    },
+    {
+      "tabla_hija": "preferencia_usuario",
+      "columna": "usuario_id",
+      "tabla_padre": "usuarios",
+      "admite_null": true
+    },
+    {
+      "tabla_hija": "productos",
+      "columna": "comercio_id",
+      "tabla_padre": "comercios",
+      "admite_null": true
+    },
+    {
+      "tabla_hija": "usuarios",
+      "columna": "plan_id",
+      "tabla_padre": "planes",
+      "admite_null": true
+    }
+  ]
+}

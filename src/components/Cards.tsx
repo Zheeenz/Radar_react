@@ -1,0 +1,24 @@
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
+import { useRadar } from '../context/RadarContext';
+import { colors, fonts, food } from '../theme';
+import { bestPrice, date, money, statusLabels } from '../domain/catalog';
+import type { Place, Product } from '../types';
+import { Badge, Button, Copy, Heading, Icon, IconButton, Row } from './ui';
+
+export function PlaceCard({ place, compact = false }: { place: Place; compact?: boolean }) {
+  const { data, openPlace, run, toggleFavorite } = useRadar();
+  const favorite = !!data?.favorites.includes(place.id);
+  return <View style={s.card}>
+    <Pressable accessibilityRole="button" accessibilityLabel={`Ver ${place.name}`} onPress={() => openPlace(place.id)} style={{ minHeight: compact ? 140 : 170, backgroundColor: '#e8eddf' }}><Image source={food} style={[s.image, { height: compact ? 140 : 170, transform: [{ scaleX: place.category === 'cafe' ? -1 : 1 }] }]} resizeMode="cover" /><View style={s.imageShade} /><View style={s.imageBadge}><Badge tone={place.veganMode === 'vegan' ? 'green' : 'neutral'}>{place.veganMode === 'vegan' ? '100% vegetal' : 'Opciones vegetales'}</Badge></View></Pressable>
+    <IconButton icon="heart" label={favorite ? `Quitar ${place.name} de favoritos` : `Guardar ${place.name} en favoritos`} active={favorite} onPress={() => run(() => toggleFavorite(place.id))} style={s.favorite} />
+    <View style={s.body}><Row style={{ justifyContent: 'space-between', alignItems: 'flex-start' }}><Pressable accessibilityRole="button" onPress={() => openPlace(place.id)} style={{ flex: 1 }}><Heading level={3}>{place.name}</Heading></Pressable><Row style={{ gap: 4 }}><Icon name="star" size={14} color="#bf8d34" /><Text style={{ fontFamily: fonts.bold, color: colors.ink }}>{place.rating.toFixed(1)}</Text><Copy small muted>({place.reviewCount})</Copy></Row></Row><Row style={{ gap: 6 }}><Icon name="map-pin" size={13} color={colors.muted} /><Copy small muted style={{ flex: 1 }}>{place.address}</Copy></Row><Copy small muted>{place.category === 'restaurant' ? 'Restaurante' : place.category === 'cafe' ? 'Cafetería' : 'Tienda'} · {place.priceRange} · {place.open ? 'Horario abierto' : 'Horario cerrado'}</Copy><Row style={{ flexWrap: 'wrap', gap: 6 }}>{place.tags.slice(0, 3).map(tag => <View key={tag} style={s.tag}><Copy small>{tag}</Copy></View>)}</Row><View style={s.cardFooter}><Row style={{ gap: 5 }}><Icon name={place.confidence === 'high' ? 'check-circle' : 'clock'} size={13} color={place.confidence === 'high' ? colors.green : colors.amber} /><Copy small muted>{place.confidence === 'high' ? 'Evidencia reciente' : 'Por corroborar'} · {date(place.lastEvidenceAt)}</Copy></Row><Pressable accessibilityRole="button" accessibilityLabel={`Ver detalles de ${place.name}`} onPress={() => openPlace(place.id)}><Icon name="arrow-up-right" size={20} color={colors.green} /></Pressable></View></View>
+  </View>;
+}
+export function ProductCard({ product }: { product: Product }) {
+  const { setModal, addProduct, run } = useRadar();
+  const price = bestPrice(product);
+  return <View style={[s.card, { padding: 20, gap: 12 }]}><Row><View style={s.productIcon}><Icon name={product.category === 'Proteínas' ? 'box' : 'package'} size={25} color={colors.green} /></View><View style={{ flex: 1 }}><Copy small muted>{product.brand}</Copy><Heading level={3}>{product.name}</Heading></View></Row><Badge tone={product.status === 'vegan' ? 'green' : product.status === 'review' ? 'amber' : 'red'}>{statusLabels[product.status]}</Badge><Row style={{ justifyContent: 'space-between' }}><Copy small muted>{price === null ? 'Sin stock registrado' : `Desde ${money(price)}`}</Copy><Pressable accessibilityRole="button" onPress={() => setModal({ kind: 'product', id: product.id })}><Copy small style={{ color: colors.green, fontFamily: fonts.bold }}>Comparar →</Copy></Pressable></Row><Button secondary compact icon="plus" onPress={() => run(() => addProduct(product.id))}>Añadir a mi lista</Button></View>;
+}
+const s = StyleSheet.create({
+  card: { borderWidth: 1, borderColor: colors.line, borderRadius: 16, backgroundColor: 'white', overflow: 'hidden', minWidth: 0 }, image: { width: '100%' }, imageShade: { ...StyleSheet.absoluteFill, backgroundColor: '#1d3d1915' }, imageBadge: { position: 'absolute', left: 14, bottom: 14 }, favorite: { position: 'absolute', top: 12, right: 12, width: 35, height: 35, borderRadius: 20 }, body: { padding: 18, gap: 10 }, tag: { paddingHorizontal: 8, paddingVertical: 3, backgroundColor: '#f3f6ef', borderRadius: 5 }, cardFooter: { borderTopWidth: 1, borderTopColor: colors.line, paddingTop: 13, marginTop: 3, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', gap: 8 }, productIcon: { width: 48, height: 52, borderRadius: 13, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.light },
+});

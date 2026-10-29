@@ -1,0 +1,21 @@
+{
+  "theme": "base",
+  "layout": "elk",
+  "themeVariables": {
+    "fontFamily": "Arial, sans-serif",
+    "fontSize": "16px",
+    "primaryColor": "#edf4e7",
+    "primaryTextColor": "#18382c",
+    "primaryBorderColor": "#27654e",
+    "lineColor": "#708375",
+    "secondaryColor": "#f7f9f6",
+    "tertiaryColor": "#ffffff"
+  },
+  "er": {
+    "diagramPadding": 28,
+    "minEntityWidth": 185,
+    "minEntityHeight": 85,
+    "entityPadding": 14,
+    "fontSize": 15
+  }
+}

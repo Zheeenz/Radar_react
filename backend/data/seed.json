@@ -1,0 +1,772 @@
+{
+  "schemaVersion": 1,
+  "profile": {
+    "name": "Antonia",
+    "preferences": [
+      "sin-gluten"
+    ],
+    "plan": "free"
+  },
+  "plans": [
+    {
+      "id": "free",
+      "name": "Explorador",
+      "price": 0,
+      "period": "mes",
+      "features": [
+        "Mapa y buscador",
+        "Verificador de ingredientes",
+        "Favoritos y lista de compras",
+        "Aportes de la comunidad"
+      ]
+    },
+    {
+      "id": "premium",
+      "name": "Raíz Premium",
+      "price": 2990,
+      "period": "mes",
+      "features": [
+        "Todo lo de Explorador",
+        "Recetario con lista de compras",
+        "Comparador de precios",
+        "Preferencias personalizadas"
+      ]
+    },
+    {
+      "id": "commerce",
+      "name": "Comercio",
+      "price": 9990,
+      "period": "mes",
+      "features": [
+        "Todo lo de Raíz Premium",
+        "Panel de tendencias",
+        "Interés por productos y comercios",
+        "Disponibilidad de catálogo"
+      ]
+    }
+  ],
+  "places": [
+    {
+      "id": "place-1",
+      "name": "Verde Barrio",
+      "category": "restaurant",
+      "veganMode": "vegan",
+      "rating": 4.8,
+      "reviewCount": 42,
+      "confidence": "high",
+      "lastEvidenceAt": "2026-10-03T14:30:00.000Z",
+      "lat": -33.4335,
+      "lng": -70.6224,
+      "address": "Sector Manuel Montt, Providencia",
+      "priceRange": "$$",
+      "hours": "Lun–sáb · 12:00–21:00",
+      "open": true,
+      "tags": [
+        "100% vegetal",
+        "Hamburguesas",
+        "Sin gluten"
+      ],
+      "description": "Cocina de barrio con bowls de temporada y hamburguesas vegetales. Comercio ficticio del piloto.",
+      "productIds": [
+        "product-1",
+        "product-3",
+        "product-5"
+      ],
+      "image": "/assets/food.png",
+      "reviewSummary": "Opiniones simuladas destacan las porciones y la variedad de opciones vegetales."
+    },
+    {
+      "id": "place-2",
+      "name": "Café Brote",
+      "category": "cafe",
+      "veganMode": "vegan",
+      "rating": 4.7,
+      "reviewCount": 28,
+      "confidence": "high",
+      "lastEvidenceAt": "2026-10-02T16:00:00.000Z",
+      "lat": -33.4409,
+      "lng": -70.6295,
+      "address": "Sector Barrio Italia, Providencia",
+      "priceRange": "$$",
+      "hours": "Lun–dom · 09:00–19:00",
+      "open": true,
+      "tags": [
+        "Café de especialidad",
+        "Pastelería",
+        "Leche vegetal"
+      ],
+      "description": "Café y dulces a base de ingredientes vegetales en un ambiente tranquilo. Comercio ficticio del piloto.",
+      "productIds": [
+        "product-2",
+        "product-4",
+        "product-6"
+      ],
+      "image": "/assets/food.png",
+      "reviewSummary": "Opiniones simuladas mencionan buen café y pastelería recién hecha."
+    },
+    {
+      "id": "place-3",
+      "name": "Despensa Raíz",
+      "category": "store",
+      "veganMode": "vegan",
+      "rating": 4.9,
+      "reviewCount": 36,
+      "confidence": "high",
+      "lastEvidenceAt": "2026-10-03T11:10:00.000Z",
+      "lat": -33.4533,
+      "lng": -70.6005,
+      "address": "Sector Plaza Ñuñoa, Ñuñoa",
+      "priceRange": "$",
+      "hours": "Lun–sáb · 10:00–20:00",
+      "open": true,
+      "tags": [
+        "A granel",
+        "Despensa",
+        "Sin gluten"
+      ],
+      "description": "Despensa de legumbres, tofu y productos vegetales para cocinar en casa. Comercio ficticio del piloto.",
+      "productIds": [
+        "product-1",
+        "product-2",
+        "product-3",
+        "product-4",
+        "product-5",
+        "product-6"
+      ],
+      "image": "/assets/food.png",
+      "reviewSummary": "Opiniones simuladas destacan la información de ingredientes y sus precios."
+    },
+    {
+      "id": "place-4",
+      "name": "Mesa Nativa",
+      "category": "restaurant",
+      "veganMode": "options",
+      "rating": 4.5,
+      "reviewCount": 19,
+      "confidence": "medium",
+      "lastEvidenceAt": "2026-10-01T17:00:00.000Z",
+      "lat": -33.4422,
+      "lng": -70.6459,
+      "address": "Sector Lastarria, Santiago Centro",
+      "priceRange": "$$$",
+      "hours": "Mar–dom · 12:30–22:00",
+      "open": true,
+      "tags": [
+        "Menú del día",
+        "Opciones veganas",
+        "Terraza"
+      ],
+      "description": "Restaurante de cocina de temporada con alternativas vegetales. Confirma la preparación al pedir. Comercio ficticio.",
+      "productIds": [
+        "product-1",
+        "product-5",
+        "product-7"
+      ],
+      "image": "/assets/food.png",
+      "reviewSummary": "Opiniones simuladas recomiendan preguntar por los ingredientes del menú diario."
+    },
+    {
+      "id": "place-5",
+      "name": "Semilla Urbana",
+      "category": "store",
+      "veganMode": "options",
+      "rating": 4.6,
+      "reviewCount": 24,
+      "confidence": "medium",
+      "lastEvidenceAt": "2026-10-02T12:15:00.000Z",
+      "lat": -33.4482,
+      "lng": -70.6574,
+      "address": "Sector Universidad de Chile, Santiago Centro",
+      "priceRange": "$",
+      "hours": "Lun–vie · 09:30–19:30",
+      "open": true,
+      "tags": [
+        "Productos vegetales",
+        "Snacks",
+        "Conveniencia"
+      ],
+      "description": "Tienda de alimentación con un catálogo mixto y opciones vegetales señalizadas. Comercio ficticio del piloto.",
+      "productIds": [
+        "product-2",
+        "product-3",
+        "product-4",
+        "product-7",
+        "product-8"
+      ],
+      "image": "/assets/food.png",
+      "reviewSummary": "Opiniones simuladas valoran la ubicación y recomiendan revisar las etiquetas."
+    },
+    {
+      "id": "place-6",
+      "name": "Luna de Avena",
+      "category": "cafe",
+      "veganMode": "options",
+      "rating": 4.4,
+      "reviewCount": 17,
+      "confidence": "pending",
+      "lastEvidenceAt": "2026-09-29T15:00:00.000Z",
+      "lat": -33.4664,
+      "lng": -70.6098,
+      "address": "Sector Irarrázaval, Ñuñoa",
+      "priceRange": "$$",
+      "hours": "Mar–sáb · 10:00–18:00",
+      "open": false,
+      "tags": [
+        "Brunch",
+        "Opciones veganas",
+        "Pastelería"
+      ],
+      "description": "Cafetería con bebidas vegetales y algunas opciones de brunch pendientes de corroborar. Comercio ficticio.",
+      "productIds": [
+        "product-2",
+        "product-6",
+        "product-7"
+      ],
+      "image": "/assets/food.png",
+      "reviewSummary": "Opiniones simuladas sugieren confirmar los ingredientes de las masas."
+    },
+    {
+      "id": "place-7",
+      "name": "Huerto al Paso",
+      "category": "restaurant",
+      "veganMode": "vegan",
+      "rating": 4.7,
+      "reviewCount": 31,
+      "confidence": "high",
+      "lastEvidenceAt": "2026-10-03T18:00:00.000Z",
+      "lat": -33.4869,
+      "lng": -70.6251,
+      "address": "Sector Campus San Joaquín, San Joaquín",
+      "priceRange": "$",
+      "hours": "Lun–vie · 11:30–17:00",
+      "open": true,
+      "tags": [
+        "Almuerzo",
+        "Take away",
+        "Bowls"
+      ],
+      "description": "Bowls y almuerzos vegetales pensados para una pausa rápida. Comercio ficticio del piloto.",
+      "productIds": [
+        "product-1",
+        "product-3",
+        "product-5"
+      ],
+      "image": "/assets/food.png",
+      "reviewSummary": "Opiniones simuladas destacan su atención rápida y bowls abundantes."
+    },
+    {
+      "id": "place-8",
+      "name": "Mercado Plantita",
+      "category": "store",
+      "veganMode": "vegan",
+      "rating": 4.6,
+      "reviewCount": 22,
+      "confidence": "medium",
+      "lastEvidenceAt": "2026-10-01T13:20:00.000Z",
+      "lat": -33.4931,
+      "lng": -70.6392,
+      "address": "Sector Carlos Valdovinos, San Joaquín",
+      "priceRange": "$",
+      "hours": "Lun–sáb · 10:00–19:00",
+      "open": false,
+      "tags": [
+        "Productos locales",
+        "Congelados",
+        "Despensa"
+      ],
+      "description": "Pequeño mercado de productos vegetales, legumbres y preparaciones congeladas. Comercio ficticio del piloto.",
+      "productIds": [
+        "product-1",
+        "product-2",
+        "product-3",
+        "product-4",
+        "product-5",
+        "product-6"
+      ],
+      "image": "/assets/food.png",
+      "reviewSummary": "Opiniones simuladas valoran las alternativas de despensa y congelados."
+    }
+  ],
+  "products": [
+    {
+      "id": "product-1",
+      "name": "Hamburguesa de lentejas",
+      "brand": "Raíz (marca ficticia)",
+      "barcode": "7800000000011",
+      "category": "Proteínas",
+      "ingredients": "Lentejas, arroz integral, zanahoria, cebolla, aceite de oliva, sal, especias.",
+      "status": "vegan",
+      "image": "/assets/food.png",
+      "prices": [
+        {
+          "placeId": "place-1",
+          "price": 6490,
+          "availability": "available"
+        },
+        {
+          "placeId": "place-3",
+          "price": 3290,
+          "availability": "available"
+        },
+        {
+          "placeId": "place-4",
+          "price": 7990,
+          "availability": "limited"
+        },
+        {
+          "placeId": "place-7",
+          "price": 4990,
+          "availability": "available"
+        },
+        {
+          "placeId": "place-8",
+          "price": 3490,
+          "availability": "available"
+        }
+      ]
+    },
+    {
+      "id": "product-2",
+      "name": "Bebida de avena",
+      "brand": "Brote (marca ficticia)",
+      "barcode": "7800000000028",
+      "category": "Bebidas",
+      "ingredients": "Agua, avena 12%, aceite de girasol, sal. Sin leche.",
+      "status": "vegan",
+      "image": "/assets/food.png",
+      "prices": [
+        {
+          "placeId": "place-2",
+          "price": 2690,
+          "availability": "available"
+        },
+        {
+          "placeId": "place-3",
+          "price": 2290,
+          "availability": "available"
+        },
+        {
+          "placeId": "place-5",
+          "price": 2490,
+          "availability": "limited"
+        },
+        {
+          "placeId": "place-6",
+          "price": 2790,
+          "availability": "available"
+        },
+        {
+          "placeId": "place-8",
+          "price": 2390,
+          "availability": "available"
+        }
+      ]
+    },
+    {
+      "id": "product-3",
+      "name": "Tofu firme 250 g",
+      "brand": "Semilla (marca ficticia)",
+      "barcode": "7800000000035",
+      "category": "Proteínas",
+      "ingredients": "Agua, soya, cloruro de magnesio.",
+      "status": "vegan",
+      "image": "/assets/food.png",
+      "prices": [
+        {
+          "placeId": "place-1",
+          "price": 2890,
+          "availability": "available"
+        },
+        {
+          "placeId": "place-3",
+          "price": 2490,
+          "availability": "available"
+        },
+        {
+          "placeId": "place-5",
+          "price": 2790,
+          "availability": "unavailable"
+        },
+        {
+          "placeId": "place-7",
+          "price": 2990,
+          "availability": "limited"
+        },
+        {
+          "placeId": "place-8",
+          "price": 2590,
+          "availability": "available"
+        }
+      ]
+    },
+    {
+      "id": "product-4",
+      "name": "Chocolate amargo 70%",
+      "brand": "Nativa (marca ficticia)",
+      "barcode": "7800000000042",
+      "category": "Snacks",
+      "ingredients": "Pasta de cacao, azúcar, manteca de cacao. Puede contener trazas de leche.",
+      "status": "review",
+      "image": "/assets/food.png",
+      "prices": [
+        {
+          "placeId": "place-2",
+          "price": 1990,
+          "availability": "available"
+        },
+        {
+          "placeId": "place-3",
+          "price": 1790,
+          "availability": "available"
+        },
+        {
+          "placeId": "place-5",
+          "price": 1890,
+          "availability": "available"
+        },
+        {
+          "placeId": "place-8",
+          "price": 1690,
+          "availability": "limited"
+        }
+      ]
+    },
+    {
+      "id": "product-5",
+      "name": "Garbanzos cocidos 400 g",
+      "brand": "Huerto (marca ficticia)",
+      "barcode": "7800000000059",
+      "category": "Despensa",
+      "ingredients": "Garbanzos, agua, sal.",
+      "status": "vegan",
+      "image": "/assets/food.png",
+      "prices": [
+        {
+          "placeId": "place-1",
+          "price": 1490,
+          "availability": "available"
+        },
+        {
+          "placeId": "place-3",
+          "price": 1190,
+          "availability": "available"
+        },
+        {
+          "placeId": "place-4",
+          "price": 1790,
+          "availability": "limited"
+        },
+        {
+          "placeId": "place-7",
+          "price": 1390,
+          "availability": "available"
+        },
+        {
+          "placeId": "place-8",
+          "price": 1290,
+          "availability": "available"
+        }
+      ]
+    },
+    {
+      "id": "product-6",
+      "name": "Granola de frutos secos",
+      "brand": "Luna (marca ficticia)",
+      "barcode": "7800000000066",
+      "category": "Desayuno",
+      "ingredients": "Avena, almendras, semillas de zapallo, pasas, jarabe de agave, aceite de coco.",
+      "status": "vegan",
+      "image": "/assets/food.png",
+      "prices": [
+        {
+          "placeId": "place-2",
+          "price": 4290,
+          "availability": "available"
+        },
+        {
+          "placeId": "place-3",
+          "price": 3890,
+          "availability": "available"
+        },
+        {
+          "placeId": "place-6",
+          "price": 4490,
+          "availability": "limited"
+        },
+        {
+          "placeId": "place-8",
+          "price": 3990,
+          "availability": "available"
+        }
+      ]
+    },
+    {
+      "id": "product-7",
+      "name": "Galletas de avena y miel",
+      "brand": "Luna (marca ficticia)",
+      "barcode": "7800000000073",
+      "category": "Snacks",
+      "ingredients": "Harina de trigo, avena, miel, mantequilla, huevo, sal.",
+      "status": "non-vegan",
+      "image": "/assets/food.png",
+      "prices": [
+        {
+          "placeId": "place-4",
+          "price": 1990,
+          "availability": "available"
+        },
+        {
+          "placeId": "place-5",
+          "price": 1490,
+          "availability": "available"
+        },
+        {
+          "placeId": "place-6",
+          "price": 2290,
+          "availability": "available"
+        }
+      ]
+    },
+    {
+      "id": "product-8",
+      "name": "Pan de molde integral",
+      "brand": "Semilla (marca ficticia)",
+      "barcode": "7800000000080",
+      "category": "Panadería",
+      "ingredients": "Harina integral, agua, levadura, aceite vegetal, sal, emulsionante E471.",
+      "status": "review",
+      "image": "/assets/food.png",
+      "prices": [
+        {
+          "placeId": "place-5",
+          "price": 2390,
+          "availability": "available"
+        }
+      ]
+    }
+  ],
+  "recipes": [
+    {
+      "id": "recipe-1",
+      "name": "Bowl de tofu crujiente",
+      "description": "Una comida colorida con proteína vegetal y verduras de temporada.",
+      "minutes": 25,
+      "servings": 2,
+      "difficulty": "Fácil",
+      "tags": [
+        "Alto en proteína",
+        "Sin gluten"
+      ],
+      "productIds": [
+        "product-3",
+        "product-5"
+      ],
+      "ingredients": [
+        "250 g de tofu firme",
+        "1 taza de garbanzos cocidos",
+        "1 taza de arroz cocido",
+        "Zanahoria y hojas verdes",
+        "Aceite de oliva, limón y sal"
+      ],
+      "steps": [
+        "Seca el tofu y córtalo en cubos.",
+        "Dora el tofu en una sartén con aceite durante 8–10 minutos.",
+        "Calienta los garbanzos y prepara las verduras.",
+        "Sirve sobre arroz y termina con limón y sal."
+      ],
+      "image": "/assets/food.png",
+      "premium": true
+    },
+    {
+      "id": "recipe-2",
+      "name": "Avena nocturna con cacao",
+      "description": "Deja listo el desayuno y agrega fruta al servir.",
+      "minutes": 10,
+      "servings": 2,
+      "difficulty": "Fácil",
+      "tags": [
+        "Desayuno",
+        "Sin cocción"
+      ],
+      "productIds": [
+        "product-2",
+        "product-6"
+      ],
+      "ingredients": [
+        "1 taza de avena",
+        "1 taza de bebida vegetal",
+        "2 cucharadas de cacao puro",
+        "Fruta de temporada",
+        "Granola al gusto"
+      ],
+      "steps": [
+        "Mezcla la avena con la bebida vegetal y el cacao.",
+        "Reparte en dos recipientes y refrigera al menos 6 horas.",
+        "Añade fruta y granola antes de servir."
+      ],
+      "image": "/assets/food.png",
+      "premium": true
+    },
+    {
+      "id": "recipe-3",
+      "name": "Hamburguesa con hummus",
+      "description": "Un almuerzo rápido, cremoso y lleno de vegetales.",
+      "minutes": 20,
+      "servings": 2,
+      "difficulty": "Fácil",
+      "tags": [
+        "Almuerzo",
+        "Para llevar"
+      ],
+      "productIds": [
+        "product-1",
+        "product-5"
+      ],
+      "ingredients": [
+        "2 hamburguesas de lentejas",
+        "1 taza de garbanzos cocidos",
+        "2 panes vegetales",
+        "Limón, aceite y sal",
+        "Tomate, lechuga y palta"
+      ],
+      "steps": [
+        "Tritura los garbanzos con limón, aceite y sal para preparar hummus.",
+        "Dora las hamburguesas siguiendo su etiqueta.",
+        "Tuesta los panes y unta hummus.",
+        "Arma con las hamburguesas, tomate, lechuga y palta."
+      ],
+      "image": "/assets/food.png",
+      "premium": true
+    }
+  ],
+  "evidence": [
+    {
+      "id": "evidence-sample-1",
+      "placeId": "place-1",
+      "productId": "product-1",
+      "title": "Etiqueta de hamburguesa de lentejas",
+      "ingredients": "Lentejas, arroz integral, zanahoria, cebolla, aceite de oliva, sal, especias.",
+      "availability": "available",
+      "createdAt": "2026-10-03T14:30:00.000Z",
+      "source": "sample",
+      "author": "Comunidad de ejemplo",
+      "note": "Evidencia y valoración simuladas para mostrar el flujo.",
+      "analysis": {
+        "status": "vegan",
+        "label": "Compatible según ingredientes",
+        "reasons": [
+          "No se detectaron ingredientes animales en la etiqueta de ejemplo."
+        ],
+        "method": "rules"
+      }
+    },
+    {
+      "id": "evidence-sample-2",
+      "placeId": "place-3",
+      "productId": "product-3",
+      "title": "Tofu disponible en despensa",
+      "ingredients": "Agua, soya, cloruro de magnesio.",
+      "availability": "available",
+      "createdAt": "2026-10-03T11:10:00.000Z",
+      "source": "sample",
+      "author": "Comunidad de ejemplo",
+      "note": "Registro ficticio de disponibilidad y etiqueta.",
+      "analysis": {
+        "status": "vegan",
+        "label": "Compatible según ingredientes",
+        "reasons": [
+          "La composición de ejemplo es vegetal."
+        ],
+        "method": "rules"
+      }
+    },
+    {
+      "id": "evidence-sample-3",
+      "placeId": "place-2",
+      "productId": "product-4",
+      "title": "Chocolate con aviso de trazas",
+      "ingredients": "Pasta de cacao, azúcar, manteca de cacao. Puede contener trazas de leche.",
+      "availability": "available",
+      "createdAt": "2026-10-02T16:00:00.000Z",
+      "source": "sample",
+      "author": "Comunidad de ejemplo",
+      "note": "Las trazas se muestran como dato a revisar, sin certificación.",
+      "analysis": {
+        "status": "review",
+        "label": "Requiere revisión",
+        "reasons": [
+          "La etiqueta de ejemplo menciona posibles trazas de leche."
+        ],
+        "method": "rules"
+      }
+    },
+    {
+      "id": "evidence-sample-4",
+      "placeId": "place-5",
+      "productId": "product-8",
+      "title": "Origen de emulsionante pendiente",
+      "ingredients": "Harina integral, agua, levadura, aceite vegetal, sal, emulsionante E471.",
+      "availability": "available",
+      "createdAt": "2026-10-02T12:15:00.000Z",
+      "source": "sample",
+      "author": "Comunidad de ejemplo",
+      "note": "Origen pendiente en datos ficticios.",
+      "analysis": {
+        "status": "review",
+        "label": "Requiere revisión",
+        "reasons": [
+          "El origen de E471 no está especificado."
+        ],
+        "method": "rules"
+      }
+    }
+  ],
+  "favorites": [
+    "place-1",
+    "place-3"
+  ],
+  "shopping": [
+    {
+      "id": "shopping-sample-1",
+      "productId": "product-3",
+      "quantity": 1,
+      "checked": false,
+      "createdAt": "2026-10-04T10:00:00.000Z"
+    },
+    {
+      "id": "shopping-sample-2",
+      "productId": "product-2",
+      "quantity": 2,
+      "checked": false,
+      "createdAt": "2026-10-04T10:00:00.000Z"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notification-sample-1",
+      "type": "availability",
+      "title": "Tofu disponible en Despensa Raíz",
+      "message": "Disponibilidad de ejemplo actualizada por la comunidad ficticia.",
+      "placeId": "place-3",
+      "productId": "product-3",
+      "createdAt": "2026-10-03T11:10:00.000Z",
+      "read": false
+    },
+    {
+      "id": "notification-sample-2",
+      "type": "welcome",
+      "title": "Bienvenida a tu radar",
+      "message": "Explora los paraderos. Los aportes y preferencias se guardan en el servidor local.",
+      "createdAt": "2026-10-04T10:00:00.000Z",
+      "read": false
+    }
+  ],
+  "events": [],
+  "catalog": {
+    "fictitious": true,
+    "title": "Paradero Vegano",
+    "notice": "Todos los comercios, productos, precios, opiniones y evidencias son ficticios. Las ubicaciones aproximan sectores de Santiago y no representan locales reales.",
+    "dataDate": "2026-10-09",
+    "storage": "local-json"
+  }
+}
